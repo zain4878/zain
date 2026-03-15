@@ -5,33 +5,8 @@
 | cart.items_count | int     |                                 |
 | cart.total       | string  | Formatted total ex: "١٠٠ ر.س"   |
 #}
-
-
-{% set header_style = theme.settings.get('header_style') | default('normal') %}
-
-{% style %}
-.header-transparent {
-  background: transparent !important;
-  box-shadow: none !important;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-}
-{% endstyle %}
-
-{% if header_style != 'hidden' %}
-<header class="store-header 
-  {% if header_style == 'transparent' %} header-transparent {% endif %}">
-  
-
-  {% set important_links = theme.settings.get('important_links') %}
-{% set header_style = theme.settings.get('header_style') | default('normal') %}
-
-{% if header_style != 'hidden' %}
-<header class="store-header 
-  {% if header_style == 'transparent' %} header-transparent {% endif %}">
-  
+{% set important_links = theme.settings.get('important_links') %}
+<header class="store-header">
   {# Top Nav #}
   <div class="top-navbar">
     <div class="container flex justify-between">
@@ -106,20 +81,6 @@
       </div>
   </div>
 </header>
-{% endif %}
-
 {% if store.scope %}
     <salla-scopes selection="{{ store.scope.display_as == 'popup' ? 'mandatory' : 'optional' }}"></salla-scopes>
 {% endif %}
-
-
-
-
-</header>
-{% endif %}
-
-
-
-
-
-
