@@ -5,6 +5,8 @@
 | page.title       | string     | *could be html                                                      |
 | page.slug        | string     | ex: "cat.show"                                                      |
 #}
+
+{#
 {% extends "layouts.master" %}
 {% block content %}
     {% component home %}
@@ -12,3 +14,129 @@
 {% block scripts %}
     <script defer src="{{ 'home.js' | asset }}"></script>
 {% endblock %}
+
+#}
+
+
+{# تمديد القالب الرئيسي لضمان ظهور الهيدر والفوتر #}
+{% extends "layouts.master" %}
+
+{% block content %}
+
+{% block content %}
+    <section class="hero-section relative h-screen">
+        {# صورة الخلفية الرئيسية #}
+        <img src="{{ 'path/to/your-image.jpg' }}" class="absolute inset-0 w-full h-full object-cover" alt="Hero Image">
+        
+        {# طبقة تغميق خفيفة لتوضيح النصوص (Overlay) #}
+        <div class="absolute inset-0 bg-black bg-opacity-40"></div>
+
+        {# محتوى فوق الصورة #}
+        <div class="relative container mx-auto h-full flex flex-col justify-center items-center text-center text-white px-4">
+            <h1 class="text-4xl md:text-6xl font-bold mb-4">عنوان متجرك الاحترافي</h1>
+            <p class="text-lg md:text-xl mb-8">وصف قصير وجذاب لمنتجاتك</p>
+            <a href="/products" class="bg-white text-black px-8 py-3 rounded-full font-bold hover:bg-primary hover:text-white transition">
+                تسوق الآن
+            </a>
+        </div>
+    </section>
+
+    {# باقي مكونات الصفحة هنا #}
+{% endblock %}
+
+
+
+    <div class="main-content-wrapper">
+        
+        {# 1. قسم السلايدر الرئيسي (Hero Section) #}
+        {# يتم جلبه من المكونات الجاهزة في الثيم #}
+        {% include 'components.home.slider' %}
+
+        {# 2. شريط مميزات المتجر (براندينج سريع) #}
+        <section class="store-features py-10 bg-gray-50 border-b border-t border-gray-100">
+            <div class="container mx-auto px-4">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                    <div class="feature-item text-center">
+                        <i class="sicon-shipping-fast text-3xl text-primary mb-2"></i>
+                        <h4 class="font-bold text-sm">شحن سريع</h4>
+                        <p class="text-xs text-gray-500">لكافة مناطق المملكة</p>
+                    </div>
+                    <div class="feature-item text-center">
+                        <i class="sicon-secure-payment text-3xl text-primary mb-2"></i>
+                        <h4 class="font-bold text-sm">دفع آمن</h4>
+                        <p class="text-xs text-gray-500">تشفير بيانات 100%</p>
+                    </div>
+                    <div class="feature-item text-center">
+                        <i class="sicon-award text-3xl text-primary mb-2"></i>
+                        <h4 class="font-bold text-sm">جودة مضمونة</h4>
+                        <p class="text-xs text-gray-500">منتجات أصلية</p>
+                    </div>
+                    <div class="feature-item text-center">
+                        <i class="sicon-headset text-3xl text-primary mb-2"></i>
+                        <h4 class="font-bold text-sm">دعم فني</h4>
+                        <p class="text-xs text-gray-500">متواجدون لخدمتكم</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        {# 3. عرض المكونات الديناميكية المختارة من لوحة التحكم #}
+        {# هذا الجزء يسمح لك بترتيب الأقسام (منتجات، صور، آراء) من إعدادات القالب #}
+        <div class="dynamic-sections mt-12">
+            {% for component in theme.settings.homepage_components %}
+                <div class="mb-16">
+                    {% include 'components.home.' ~ component.type with { 'settings': component.settings } %}
+                </div>
+            {% endfor %}
+        </div>
+
+        {# 4. قسم "لماذا نحن؟" (اختياري لزيادة الثقة) #}
+        <section class="about-us-summary py-16 bg-white">
+            <div class="container mx-auto px-4 text-center max-w-3xl">
+                <h2 class="text-2xl font-bold mb-6">مرحباً بك في {{ store.name }}</h2>
+                <p class="text-gray-600 leading-relaxed mb-8">
+                    نحن نسعى دائماً لتقديم أفضل المنتجات بأعلى معايير الجودة، هدفنا هو نيل رضاكم وتوفير تجربة تسوق فريدة.
+                </p>
+                <a href="/p/about-us" class="btn btn-outline-primary px-8 py-3 rounded-full">تعرف علينا أكثر</a>
+            </div>
+        </section>
+
+    </div>
+
+    {# تنسيقات CSS إضافية لتحسين المظهر #}
+    <style>
+        .feature-item i { transition: transform 0.3s ease; }
+        .feature-item:hover i { transform: translateY(-5px); color: var(--main-color); }
+        .dynamic-sections .s-block-title { text-align: center; margin-bottom: 40px; font-weight: 800; font-size: 1.8rem; position: relative; }
+        .dynamic-sections .s-block-title:after { content: ''; position: absolute; bottom: -10px; right: 50%; transform: translateX(50%); width: 50px; height: 3px; background: var(--main-color); border-radius: 2px; }
+    </style>
+{% endblock %}
+
+
+<style>
+    /* جعل الهيدر يطفو فوق الصورة */
+    .s-header {
+        position: absolute !important;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: transparent !important;
+        border-bottom: none !important;
+        z-index: 99;
+        transition: background-color 0.3s ease;
+    }
+
+    /* تغيير لون الروابط والأيقونات للأبيض لتناسب الخلفية الداكنة للصورة */
+    .s-header .header-link, 
+    .s-header .s-menu-item, 
+    .s-header .sicon-cart,
+    .s-header .sicon-user {
+        color: #ffffff !important;
+    }
+
+    /* إضافة خلفية عند التمرير لأسفل (اختياري) */
+    .header-scrolled {
+        background-color: rgba(0, 0, 0, 0.8) !important;
+        position: fixed !important;
+    }
+</style>

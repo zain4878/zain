@@ -988,6 +988,10 @@ select {
     margin-top: 0.625rem;
     margin-bottom: 0.625rem;
 }
+.mx-auto {
+    margin-left: auto;
+    margin-right: auto;
+}
 .-mb-52 {
     margin-bottom: -13rem;
 }
@@ -1074,6 +1078,12 @@ select {
 }
 .mt-8 {
     margin-top: 2rem;
+}
+.mb-16 {
+    margin-bottom: 4rem;
+}
+.mt-12 {
+    margin-top: 3rem;
 }
 .line-clamp-1 {
     overflow: hidden;
@@ -1182,6 +1192,9 @@ select {
 }
 .h-px {
     height: 1px;
+}
+.h-screen {
+    height: 100vh;
 }
 .max-h-0 {
     max-height: 0px;
@@ -1666,6 +1679,9 @@ select {
     background-color: rgba(255, 255, 255, 1);
     background-color: rgba(255, 255, 255, var(--tw-bg-opacity, 1));
 }
+.bg-opacity-40 {
+    --tw-bg-opacity: 0.4;
+}
 .bg-cover {
     background-size: cover;
 }
@@ -1786,6 +1802,14 @@ select {
     padding-top: 2rem;
     padding-bottom: 2rem;
 }
+.py-10 {
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+}
+.py-16 {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+}
 .\!pt-1 {
     padding-top: 0.25rem !important;
 }
@@ -1897,6 +1921,10 @@ select {
     font-size: 0.75rem;
     line-height: 1rem;
 }
+.text-4xl {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+}
 .font-bold {
     font-weight: 700;
 }
@@ -1935,6 +1963,9 @@ select {
 }
 .leading-tight {
     line-height: 1.25;
+}
+.leading-relaxed {
+    line-height: 1.625;
 }
 .\!text-primary {
     color: #414042 !important;
@@ -2042,6 +2073,11 @@ select {
     --tw-text-opacity: 1;
     color: rgba(255, 255, 255, 1);
     color: rgba(255, 255, 255, var(--tw-text-opacity, 1));
+}
+.text-black {
+    --tw-text-opacity: 1;
+    color: rgba(0, 0, 0, 1);
+    color: rgba(0, 0, 0, var(--tw-text-opacity, 1));
 }
 .underline {
     text-decoration-line: underline;
@@ -2223,6 +2259,19 @@ select {
 }
 .btn:hover {
     opacity: 0.8;
+}
+.btn-outline-primary {
+    border-width: 1px;
+    border-color: #414042;
+    border-color: var(--color-primary);
+    color: #414042;
+    color: var(--color-primary);
+}
+.btn-outline-primary:hover {
+    background-color: #414042;
+    background-color: var(--color-primary);
+    color: #ff6767;
+    color: var(--color-primary-reverse);
 }
 .form-label {
     margin-bottom: 0.25rem;
@@ -25821,6 +25870,10 @@ body.font-dinnextltarabic-regular .btn--add-to-cart {
 .target\:btn:target:hover {
     opacity: 0.8;
 }
+.hover\:bg-primary:hover {
+    background-color: #414042;
+    background-color: var(--color-primary);
+}
 .hover\:text-dark:hover {
     --tw-text-opacity: 1;
     color: rgba(29, 31, 31, 1);
@@ -25829,6 +25882,11 @@ body.font-dinnextltarabic-regular .btn--add-to-cart {
 .hover\:text-primary:hover {
     color: #414042;
     color: var(--color-primary);
+}
+.hover\:text-white:hover {
+    --tw-text-opacity: 1;
+    color: rgba(255, 255, 255, 1);
+    color: rgba(255, 255, 255, var(--tw-text-opacity, 1));
 }
 .hover\:underline:hover {
     text-decoration-line: underline;
@@ -26097,6 +26155,14 @@ body.font-dinnextltarabic-regular .btn--add-to-cart {
     .md\:text-base {
         font-size: 1rem;
         line-height: 1.5rem;
+    }
+    .md\:text-6xl {
+        font-size: 3.75rem;
+        line-height: 1;
+    }
+    .md\:text-xl {
+        font-size: 1.25rem;
+        line-height: 1.75rem;
     }
     .md\:first\:pt-24:first-child {
         padding-top: 6rem;
