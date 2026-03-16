@@ -6,7 +6,6 @@
 | page.slug        | string     | ex: "cat.show"                                                      |
 #}
 
-{#}
 {% extends "layouts.master" %}
 {% block content %}
     {% component home %}
@@ -14,93 +13,3 @@
 {% block scripts %}
     <script defer src="{{ 'home.js' | asset }}"></script>
 {% endblock %}
-
-#}
-
-{% extends "layouts.master" %}
-
-{% block content %}
-    {# 1. قسم الصورة الرئيسية (Hero Section) #}
-    <section class="hero-section relative flex items-center justify-center overflow-hidden" style="height: 80vh;">
-        {# خلفية الصورة - يمكنك تغيير الرابط برابط صورتك #}
-        <img src="https://images.unsplash.com" 
-             class="absolute inset-0 w-full h-full object-cover z-0" 
-             alt="{{ store.name }}">
-        
-        {# طبقة تغميق (Overlay) لبروز النصوص #}
-        <div class="absolute inset-0 bg-black bg-opacity-40 z-10"></div>
-
-        {# المحتوى فوق الصورة #}
-        <div class="container relative z-20 text-center text-white px-4">
-            <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">{{ store.name }}</h1>
-            <p class="text-lg md:text-2xl mb-10 opacity-90 max-w-2xl mx-auto">أهلاً بك في متجرنا، اكتشف مجموعتنا الحصرية الآن</p>
-            <div class="flex gap-4 justify-center">
-                <a href="/products" class="bg-primary text-white px-10 py-3 rounded-full font-bold hover:bg-white hover:text-primary transition-all duration-300">
-                    تسوق الآن
-                </a>
-            </div>
-        </div>
-    </section>
-
-    {# 2. المكونات الديناميكية (لسحب باقي أقسام المتجر من لوحة التحكم) #}
-    <div class="container mx-auto px-4 mt-12">
-        {% if theme.settings.homepage_components %}
-            {% for component in theme.settings.homepage_components %}
-                <div class="mb-12">
-                    {% include 'components.home.' ~ component.type with { 'settings': component.settings } %}
-                </div>
-            {% endfor %}
-        {% endif %}
-    </div>
-
-    {# 3. تنسيق الهيدر الشفاف #}
-    <style>
-        /* كود جعل الهيدر شفافاً ويطفو فوق الصورة */
-        .header-section {
-            position: absolute !important;
-            top: 0;
-            left: 0;
-            width: 100%;
-            background: transparent !important;
-            border: none !important;
-            z-index: 50;
-        }
-
-        /* تحويل لون نصوص الهيدر للأبيض */
-        .header-section .s-menu-item, 
-        .header-section .sicon-cart, 
-        .header-section .sicon-user,
-        .header-section .header-link {
-            color: #ffffff !important;
-        }
-
-        /* إلغاء الظل أو الحدود الافتراضية */
-        .header-section:after { display: none !important; }
-
-
-    /* هذا الكود سيعمل فقط في الصفحة الرئيسية */
-    @media (min-string: 1024px) {
-        .header-section {
-            position: absolute !important;
-            top: 0;
-            left: 0;
-            width: 100%;
-            background: transparent !important;
-            border: none !important;
-            z-index: 1000;
-        }
-        /* تغيير لون الروابط للأبيض لتظهر فوق الصورة */
-        .header-section .s-menu-item-link, 
-        .header-section .sicon-cart, 
-        .header-section .sicon-user {
-            color: #ffffff !important;
-        }}
-   
-
-
-
-
-    </style>
-{% endblock %}
-
-

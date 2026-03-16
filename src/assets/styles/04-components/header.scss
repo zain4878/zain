@@ -68,7 +68,7 @@
   // Custom background Color
   .has-bg &,
   .has-bg & .sub-menu{
-    @apply bg-[color:var(--mainnav-bg)];
+   // @apply bg-[color:var(--mainnav-bg)];
   }
 
   // Custom text color

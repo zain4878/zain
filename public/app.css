@@ -944,9 +944,6 @@ select {
 .-z-1 {
     z-index: -1;
 }
-.z-0 {
-    z-index: 0;
-}
 .z-10 {
     z-index: 10;
 }
@@ -986,10 +983,6 @@ select {
 .mx-2 {
     margin-left: 0.5rem;
     margin-right: 0.5rem;
-}
-.mx-auto {
-    margin-left: auto;
-    margin-right: auto;
 }
 .my-2\.5 {
     margin-top: 0.625rem;
@@ -1057,9 +1050,6 @@ select {
 }
 .mt-10 {
     margin-top: 2.5rem;
-}
-.mt-12 {
-    margin-top: 3rem;
 }
 .mt-16 {
     margin-top: 4rem;
@@ -1273,9 +1263,6 @@ select {
 }
 .max-w-16 {
     max-width: 4rem;
-}
-.max-w-2xl {
-    max-width: 42rem;
 }
 .max-w-3xl {
     max-width: 48rem;
@@ -1662,9 +1649,6 @@ select {
     background-color: rgba(240, 253, 244, 1);
     background-color: rgba(240, 253, 244, var(--tw-bg-opacity, 1));
 }
-.bg-inherit {
-    background-color: inherit;
-}
 .bg-primary {
     background-color: #414042;
     background-color: var(--color-primary);
@@ -1679,8 +1663,8 @@ select {
     background-color: rgba(255, 255, 255, 1);
     background-color: rgba(255, 255, 255, var(--tw-bg-opacity, 1));
 }
-.bg-opacity-40 {
-    --tw-bg-opacity: 0.4;
+.bg-inherit {
+    background-color: inherit;
 }
 .bg-cover {
     background-size: cover;
@@ -1741,10 +1725,6 @@ select {
 .px-1 {
     padding-left: 0.25rem;
     padding-right: 0.25rem;
-}
-.px-10 {
-    padding-left: 2.5rem;
-    padding-right: 2.5rem;
 }
 .px-2 {
     padding-left: 0.5rem;
@@ -1888,10 +1868,6 @@ select {
 .text-3xl {
     font-size: 1.875rem;
     line-height: 2.25rem;
-}
-.text-4xl {
-    font-size: 2.25rem;
-    line-height: 2.5rem;
 }
 .text-6xl {
     font-size: 3.75rem;
@@ -2093,9 +2069,6 @@ select {
 }
 .opacity-80 {
     opacity: 0.8;
-}
-.opacity-90 {
-    opacity: 0.9;
 }
 .shadow {
     --tw-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
@@ -21862,9 +21835,6 @@ input[type=radio].sr-only:checked ~ div.radio-images__badge {
         min-height: 84px;
     }
 }
-.has-bg .main-nav-container, .has-bg .main-nav-container .sub-menu {
-    background-color: var(--mainnav-bg);
-}
 .has-text-color .main-nav-container {
     color: var(--mainnav-text-color);
 }
@@ -25848,11 +25818,6 @@ body.font-dinnextltarabic-regular .btn--add-to-cart {
 .target\:btn:target:hover {
     opacity: 0.8;
 }
-.hover\:bg-white:hover {
-    --tw-bg-opacity: 1;
-    background-color: rgba(255, 255, 255, 1);
-    background-color: rgba(255, 255, 255, var(--tw-bg-opacity, 1));
-}
 .hover\:text-dark:hover {
     --tw-text-opacity: 1;
     color: rgba(29, 31, 31, 1);
@@ -26126,10 +26091,6 @@ body.font-dinnextltarabic-regular .btn--add-to-cart {
         font-size: 1.5rem;
         line-height: 2rem;
     }
-    .md\:text-6xl {
-        font-size: 3.75rem;
-        line-height: 1;
-    }
     .md\:text-base {
         font-size: 1rem;
         line-height: 1.5rem;
@@ -26351,14 +26312,14 @@ body.font-dinnextltarabic-regular .btn--add-to-cart {
 .ltr\:mr-3:where([dir="ltr"], [dir="ltr"] *) {
     margin-right: 0.75rem;
 }
-.ltr\:mr-4:where([dir="ltr"], [dir="ltr"] *) {
-    margin-right: 1rem;
-}
 .ltr\:mr-8:where([dir="ltr"], [dir="ltr"] *) {
     margin-right: 2rem;
 }
 .ltr\:mr-auto:where([dir="ltr"], [dir="ltr"] *) {
     margin-right: auto;
+}
+.ltr\:mr-4:where([dir="ltr"], [dir="ltr"] *) {
+    margin-right: 1rem;
 }
 .ltr\:rounded-l-none:where([dir="ltr"], [dir="ltr"] *) {
     border-top-left-radius: 0px;
@@ -26469,15 +26430,8 @@ body.font-dinnextltarabic-regular .btn--add-to-cart {
 .rtl\:ml-3:where([dir="rtl"], [dir="rtl"] *) {
     margin-left: 0.75rem;
 }
-.rtl\:ml-4:where([dir="rtl"], [dir="rtl"] *) {
-    margin-left: 1rem;
-}
 .rtl\:ml-8:where([dir="rtl"], [dir="rtl"] *) {
     margin-left: 2rem;
-}
-.rtl\:ml-\[unset\]:where([dir="rtl"], [dir="rtl"] *) {
-    margin-left: 0;
-    margin-left: initial;
 }
 .rtl\:ml-auto:where([dir="rtl"], [dir="rtl"] *) {
     margin-left: auto;
@@ -26487,6 +26441,13 @@ body.font-dinnextltarabic-regular .btn--add-to-cart {
 }
 .rtl\:mr-3:where([dir="rtl"], [dir="rtl"] *) {
     margin-right: 0.75rem;
+}
+.rtl\:ml-4:where([dir="rtl"], [dir="rtl"] *) {
+    margin-left: 1rem;
+}
+.rtl\:ml-\[unset\]:where([dir="rtl"], [dir="rtl"] *) {
+    margin-left: 0;
+    margin-left: initial;
 }
 .rtl\:mr-4:where([dir="rtl"], [dir="rtl"] *) {
     margin-right: 1rem;
