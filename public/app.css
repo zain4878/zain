@@ -340,14 +340,18 @@ body {
   line-height: inherit; /* 2 */
 }
 
-
 body{
-background-size:cover;
-background-position:center;
-background-attachment:fixed;
-background-repeat:no-repeat;
+background-image: url('{{ theme.settings.site_background }}');
+background-size: cover;
+background-position: center;
+background-repeat: no-repeat;
+background-attachment: fixed;
 }
-
+body,
+main,
+.container{
+background: transparent !important;
+}
 /*
 1. Add the correct height in Firefox.
 2. Correct the inheritance of border color in Firefox. (https://bugzilla.mozilla.org/show_bug.cgi?id=190655)
