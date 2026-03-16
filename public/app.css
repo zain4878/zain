@@ -1649,6 +1649,9 @@ select {
     background-color: rgba(240, 253, 244, 1);
     background-color: rgba(240, 253, 244, var(--tw-bg-opacity, 1));
 }
+.bg-inherit {
+    background-color: inherit;
+}
 .bg-primary {
     background-color: #414042;
     background-color: var(--color-primary);
@@ -1662,9 +1665,6 @@ select {
     --tw-bg-opacity: 1;
     background-color: rgba(255, 255, 255, 1);
     background-color: rgba(255, 255, 255, var(--tw-bg-opacity, 1));
-}
-.bg-inherit {
-    background-color: inherit;
 }
 .bg-cover {
     background-size: cover;
@@ -21835,6 +21835,29 @@ input[type=radio].sr-only:checked ~ div.radio-images__badge {
         min-height: 84px;
     }
 }
+.main-nav-container {
+  /*
+    .has-bg &,
+    .has-bg & .sub-menu{
+      @apply bg-[color:var(--mainnav-bg)];
+    }
+  */
+}
+.has-bg .main-nav-container, .has-bg .main-nav-container .sub-menu {
+  background: transparent !important;
+}
+.main-nav-container .header-transparent .top-navbar,
+.main-nav-container .header-transparent .main-nav-container {
+  background: transparent !important;
+  box-shadow: none !important;
+}
+.main-nav-container .header-transparent {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 50;
+}
 .has-text-color .main-nav-container {
     color: var(--mainnav-text-color);
 }
@@ -26312,14 +26335,14 @@ body.font-dinnextltarabic-regular .btn--add-to-cart {
 .ltr\:mr-3:where([dir="ltr"], [dir="ltr"] *) {
     margin-right: 0.75rem;
 }
+.ltr\:mr-4:where([dir="ltr"], [dir="ltr"] *) {
+    margin-right: 1rem;
+}
 .ltr\:mr-8:where([dir="ltr"], [dir="ltr"] *) {
     margin-right: 2rem;
 }
 .ltr\:mr-auto:where([dir="ltr"], [dir="ltr"] *) {
     margin-right: auto;
-}
-.ltr\:mr-4:where([dir="ltr"], [dir="ltr"] *) {
-    margin-right: 1rem;
 }
 .ltr\:rounded-l-none:where([dir="ltr"], [dir="ltr"] *) {
     border-top-left-radius: 0px;
@@ -26430,8 +26453,15 @@ body.font-dinnextltarabic-regular .btn--add-to-cart {
 .rtl\:ml-3:where([dir="rtl"], [dir="rtl"] *) {
     margin-left: 0.75rem;
 }
+.rtl\:ml-4:where([dir="rtl"], [dir="rtl"] *) {
+    margin-left: 1rem;
+}
 .rtl\:ml-8:where([dir="rtl"], [dir="rtl"] *) {
     margin-left: 2rem;
+}
+.rtl\:ml-\[unset\]:where([dir="rtl"], [dir="rtl"] *) {
+    margin-left: 0;
+    margin-left: initial;
 }
 .rtl\:ml-auto:where([dir="rtl"], [dir="rtl"] *) {
     margin-left: auto;
@@ -26441,13 +26471,6 @@ body.font-dinnextltarabic-regular .btn--add-to-cart {
 }
 .rtl\:mr-3:where([dir="rtl"], [dir="rtl"] *) {
     margin-right: 0.75rem;
-}
-.rtl\:ml-4:where([dir="rtl"], [dir="rtl"] *) {
-    margin-left: 1rem;
-}
-.rtl\:ml-\[unset\]:where([dir="rtl"], [dir="rtl"] *) {
-    margin-left: 0;
-    margin-left: initial;
 }
 .rtl\:mr-4:where([dir="rtl"], [dir="rtl"] *) {
     margin-right: 1rem;

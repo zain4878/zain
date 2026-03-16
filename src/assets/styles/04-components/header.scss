@@ -66,10 +66,33 @@
   @apply min-h-[68px] lg:min-h-[84px];
   
   // Custom background Color
+  /*
   .has-bg &,
   .has-bg & .sub-menu{
-   // @apply bg-[color:var(--mainnav-bg)];
+    @apply bg-[color:var(--mainnav-bg)];
   }
+*/
+// Custom background Color
+.has-bg &,
+.has-bg & .sub-menu{
+  background: transparent !important;
+}
+
+.header-transparent .top-navbar,
+.header-transparent .main-nav-container {
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.header-transparent {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 50;
+}
+
+
 
   // Custom text color
   .has-text-color & {

@@ -25,6 +25,17 @@
         "filters"
     ],
     "settings": [
+{
+  "type": "boolean",
+  "icon": "sicon-toggle-off",
+  "label": "رأس صفحة شفاف",
+  "description": "جعل الهيدر شفاف لعرض صورة خلفية تحته",
+  "id": "transparent_header",
+  "format": "switch",
+  "required": false,
+  "value": false,
+  "selected": false
+},
         {
             "id": "squar_photo_bg_image_size",
             "type": "items",
@@ -84,6 +95,7 @@
             "value": "خيارات أعلى الصفحة",
             "variant": "h6"
         },
+        
         {
             "id": "header_is_sticky",
             "label": "تثبت القائمة الرئيسية أعلى الصفحة عند التمرير لأسفل",
@@ -362,6 +374,8 @@
                     "value": false,
                     "selected": false
                 },
+
+               
                 {
                     "type": "static",
                     "format": "description",
