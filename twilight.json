@@ -25,6 +25,17 @@
         "filters"
     ],
     "settings": [
+
+{
+  "type": "string",
+  "icon": "sicon-image",
+  "label": "صورة خلفية الموقع",
+  "id": "site_background",
+  "format": "image",
+  "required": false,
+  "description": "يمكنك رفع صورة لتكون خلفية الموقع"
+},
+
 {
   "type": "boolean",
   "icon": "sicon-toggle-off",

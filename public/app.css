@@ -339,6 +339,15 @@ body {
   margin: 0; /* 1 */
   line-height: inherit; /* 2 */
 }
+
+
+body{
+background-size:cover;
+background-position:center;
+background-attachment:fixed;
+background-repeat:no-repeat;
+}
+
 /*
 1. Add the correct height in Firefox.
 2. Correct the inheritance of border color in Firefox. (https://bugzilla.mozilla.org/show_bug.cgi?id=190655)
@@ -22048,6 +22057,12 @@ input[type=radio].sr-only:checked ~ div#nav-cart span {
 }
 .header-search .s-search-results {
     z-index: 10;
+}
+body {
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
 }
 .store-footer {
     position: relative;
