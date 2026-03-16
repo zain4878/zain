@@ -14,13 +14,16 @@
 | landing.show_store_features | bool                   |             |   |   |
 #}
 
+
 {% extends "layouts.master" %}
 
-
 {% block content %}
+
 <script>
-	window.showQuantity = "{{landing.show_quantity ? 'true' : 'false'}}"
+	window.showQuantity = "{{landing.show_quantity ? 'true' : 'false'}}";
 </script>
+
+
 
     {# ======================== Landing Page ======================== #}
 
