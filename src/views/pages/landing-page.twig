@@ -13,12 +13,18 @@
 | landing.is_expired          | bool                   |             |   |   |
 | landing.show_store_features | bool                   |             |   |   |
 #}
+
 {% extends "layouts.master" %}
+
+
 {% block content %}
 <script>
 	window.showQuantity = {{landing.show_quantity ? 'true' : 'false'}}
 </script>
+
     {# ======================== Landing Page ======================== #}
+
+    {#
     {% if not landing %}
         <div class="landing-page notfound">
             <header>
@@ -119,3 +125,6 @@
     {% endif %}
     <div class="hidden bottom-1"></div>
 {% endblock %}
+
+
+#}
